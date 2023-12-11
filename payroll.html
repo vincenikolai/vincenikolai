@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Bebas+Neue&family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap" rel="stylesheet">
+<style>
+
+    @keyframes load{
+        0%{transform:translateY(10%)}
+
+        100%{transform:translateY(-300%)}}
+    @keyframes loadbutton{
+        0%{transform:translateY(12%)}
+        100%{transform:translateY(1000%)}
+    }
+    @keyframes backgroundanim{
+        0%{background-color: aqua;}
+        50%{background-color: rgb(149, 248, 248);}
+        100%{background-color: aqua;}
+    }
+    @keyframes convertload {
+    0% { transform: translate(-50%, 200%); opacity: 0;width:75%; height:60%; }
+    100% { transform: translate(-50%, -60%); opacity: 1;width:75%; height:60%; }
+}
+    #Info{
+        animation:load 2s forwards;
+        background-color: azure ;
+        width:100%;
+        height:110%;
+        margin-top:-4%;
+        text-align: center;
+        padding-top:4%;
+        font-family:'Bebas Neue';
+    }
+    body{
+        margin:0px;
+        animation:backgroundanim 10s infinite;
+        
+        overflow: hidden;
+    }
+    .imagelist{
+        display:flex;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        margin-top:0%;
+        border-top:1px solid black;
+        padding-top:10px;
+    }
+    .item{
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        transition:0.6s;
+        box-shadow:0px 0px 50px white;
+        border:1px solid black;
+        border-radius: 25px  ;
+    }
+    .link{
+        transition:0.6s;
+    }
+    #name{
+        font-size: 8vw;
+        display:inline
+    }
+    #information{
+        float:top;
+        margin-top:10px;
+        display:inline;
+        font-size: 4vw;
+    }
+    #anim{
+        animation:loadbutton 9s forwards;
+        
+    }
+    #outerPortion {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-family: 'Montserrat';
+        text-align: center;
+        opacity:0%;
+        animation: convertload 2s forwards;
+        animation-delay: 0.5s;
+        font-size:1vw;
+        display:grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows:20% 80%;
+    }
+    #ConvertPortion{
+        font-size:2vw;
+        background-color: #fff;
+        box-shadow:10px 10px 50px white;
+        border-radius: 100px;
+        width:68%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0;
+    }
+    #heads{
+        font-size:3vw;
+    }
+
+    #Input,#Conversion,#Gimme{
+
+        text-align: right;
+        border-radius: 25px;
+        width:33%;
+    }
+
+
+    #back{
+        border-radius: 23px;
+        background-color: white;
+        border:1 solid red;
+        font-family: 'Monserrat';
+        padding:5px;
+        transition:0.6s
+    }
+    #back:hover{
+        transform: scale(1.1);
+        background-color: #eeeeee;
+        color:red;
+        cursor: pointer;
+    }
+    thead{
+        background-color: white;
+    }
+    td{
+        border: 1px solid black;
+    }
+    table{
+        background-color: white;
+        border: 1px solid black;
+    }
+    #Title{
+        grid-row-start:1 ;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end:3;
+        margin-top:auto;
+        font-size:4vw;
+    }
+    #employeetable{
+        grid-row-start:2 ;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        padding-bottom:0%;
+        background-color:white;
+    }
+    #Entries{
+        grid-row-start:2 ;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        background-color: #d5faff;
+        border-radius:25px 0px 0px 25px;
+    }
+    #Name,#Days,#Rate,#Deductions,#IndexDelete{
+        text-align: right;
+        border-radius: 10px;
+    }
+    #Confirm{
+        height:25%;
+        width:25%;
+    }
+    #Cancel{
+        height:25%;
+        width:25%;
+    }
+    #ConfirmCancel{
+        text-align: center;
+        font-family: 'Montserrat';
+    }
+</style>
+<body>
+    <div id="Info">
+    <div id="name"> Vince Nikolai |</div>
+    <div id="information">CS 1131 Websites project</div>
+    <img src="ADDULOGO.png" style="width:10%; height:10%;float: right; margin-right:5%;margin-top:-1%">
+    </div>
+    <div id="anim">
+        <div class="imagelist">
+            <a href="calcuind.html" id="conversion" class="link">
+               <img src="1.png"class="item" id="item1">
+            </a>
+             <a href="IncomeTax.html" id="income" class="link">
+           <img src="2.png"class="item" id="item2">
+         </a>
+         <a href="payroll.html" id="payroll" class="link">
+          <img src="3.png"class="item" id="item3" >
+         </a>
+        <a href="NCalc.html" id="summation" class="link">
+         <img src="4.png" class="item" id="item4">
+         </a>
+        </div>
+    </div>
+
+    
+     <div id="outerPortion">
+         <div id="Title">Payroll Table</div>
+      <div id="Entries">
+        <label for="Name">Employee Name</label>
+            <input id="Name" type="text" class="buttons"><br><br>
+            <label for="Days">Amount of Days Worked</label>
+            <input id="Days" type="number" class="buttons"><br><br>
+            <label for="Rate">Employee Daily Rate</label>
+            <input id="Rate" type="number" class="buttons"><br><br>
+            <label for="Deductions">Employee Deductions</label>
+            <input id="Deductions" type="number" class="buttons"><br>
+            <button id="EmployeeIn" class="buttons" onclick="EmployeeEnter()">Add Employee</button><br><br>
+            <label for="IndexDelete">Index of employee to delete</label>
+            <input id="IndexDelete" type="number" class="buttons">
+            <button onclick="DeleteIndex()">Clear Index</button>
+            <button onclick="clearAll()">Clear All</button><br><br>
+        <a href="index.html"><button id="back">Return To Menu</button></a>
+    </div>
+       
+
+         <table id=employeetable>
+            <thead>
+                <tr>
+                    <td>Number</td>
+                    <td>Employee Name</td>
+                    <td>Days Worked</td>
+                    <td>Daily Rate</td>
+                    <td>Gross Pay</td>
+                    <td>Deduction Amount</td>
+                    <td>Net Pay</td>
+                </tr>
+            </thead>
+            <tbody id="TBody"></tbody>
+            <tfooter>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td id="TotalNet"></td>
+                </tr>
+            </tfooter>
+        </table>
+           
+            
+        
+        </div>
+
+    <dialog id="ConfirmCancel">
+        <form method="dialog">
+            <h4 id="dlgmsg">Are you sure you want to delete?</h4>
+            <button id="Confirm" value="Confirm">Yes</button>
+            <button id="Cancel" value="Cancel" onclick="closeDB">No</button>
+        </form>
+    </dialog>
+</body>
+
+<script>
+       var Staff=[]
+       let EmployeeAmm =0;
+       const TBody = document.getElementById('TBody')
+       const TotalNP = document.getElementById('TotalNet')
+       function clearAll(){
+        var dialog = document.getElementById('ConfirmCancel');
+        dialog.showModal();
+        document.getElementById('Confirm').addEventListener('click', function () {
+
+        EmployeeAmm = 0;
+        Staff=[];
+        TBody.innerHTML = ''
+       })}
+
+       function EmployeeEnter() 
+       { 
+            var employee = {
+                Name:      document.getElementById('Name').value,
+                Days:      document.getElementById('Days').value*1,
+                Rate:      document.getElementById('Rate').value*1,
+                Deduction: document.getElementById('Deductions').value*1,
+                GrossPay : 0,
+                NetPay: 0,
+            };
+
+            employee.GrossPay = (employee.Days*employee.Rate);
+            employee.NetPay = employee.GrossPay-employee.Deduction
+            Staff.push(employee);
+            EmployeeAmm++;
+            UpdateTable()
+             document.getElementById('Name').value = "";
+             document.getElementById('Days').value = "";
+             document.getElementById('Rate').value = "";
+             document.getElementById('Deductions').value = ""
+        };
+
+        function UpdateTable(){
+            let i = 0;
+            let y=0;
+            TBody.innerHTML = ''
+            while (i<EmployeeAmm){
+                TBody.innerHTML+="<tr><td>"+(i+1)+"</td><td>"+Staff[i].Name+"</td><td>"+Staff[i].Days+"</td><td>₱"+Staff[i].Rate.toFixed(2)+"</td><td>₱"+Staff[i].GrossPay.toFixed(2)+"</td><td>₱"+Staff[i].Deduction.toFixed(2)+"</td><td>₱"+Staff[i].NetPay.toFixed(2)+"</td></tr>";
+                y+=Staff[i].NetPay
+                i++
+            }
+            TotalNP.innerHTML="₱"+y.toFixed(2)
+        }
+        function DeleteIndex() {
+         var deleteNo = document.getElementById('IndexDelete').value * 1;
+             if (deleteNo >= 1 && deleteNo <= EmployeeAmm) {
+           var dialog = document.getElementById('ConfirmCancel');
+           dialog.showModal();
+          document.getElementById('Confirm').onclick = function () {
+            Staff.splice(deleteNo - 1, 1);
+            EmployeeAmm--;
+            UpdateTable();
+            dialog.close(); 
+        };
+    }
+}
+        function closeDB(){
+            var confirm =document.getElementById('ConfirmCancel')
+            confirm.close()
+        }
+       
+   
+</script>
+</html>

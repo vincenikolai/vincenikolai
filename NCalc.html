@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Bebas+Neue&family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap" rel="stylesheet">
+<style>
+
+    @keyframes load{
+        0%{transform:translateY(10%)}
+
+        100%{transform:translateY(-300%)}}
+    @keyframes loadbutton{
+        0%{transform:translateY(12%)}
+        100%{transform:translateY(1000%)}
+    }
+    @keyframes backgroundanim{
+        0%{background-color: aqua;}
+        50%{background-color: rgb(149, 248, 248);}
+        100%{background-color: aqua;}
+    }
+    @keyframes convertload {
+    0% { transform: translate(-50%, 200%); opacity: 0; }
+    100% { transform: translate(-50%, -70%); opacity: 1; }
+}
+    #Info{
+        animation:load 2s forwards;
+        background-color: azure ;
+        width:100%;
+        height:110%;
+        margin-top:-4%;
+        text-align: center;
+        padding-top:4%;
+        font-family:'Bebas Neue';
+    }
+    body{
+        margin:0px;
+        animation:backgroundanim 10s infinite;
+        
+        overflow: hidden;
+    }
+    .imagelist{
+        display:flex;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        margin-top:0%;
+        border-top:1px solid black;
+        padding-top:10px;
+    }
+    .item{
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        transition:0.6s;
+        box-shadow:0px 0px 50px white;
+        border:1px solid black;
+        border-radius: 25px  ;
+    }
+    .link{
+        transition:0.6s;
+    }
+    #name{
+        font-size: 8vw;
+        display:inline
+    }
+    #information{
+        float:top;
+        margin-top:10px;
+        display:inline;
+        font-size: 4vw;
+    }
+    #anim{
+        animation:loadbutton 9s forwards;
+        
+    }
+    #outerPortion {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-family: 'Montserrat';
+        text-align: center;
+        opacity:0%;
+        animation: convertload 2s forwards;
+        animation-delay: 0.5s;
+        font-size:1vw;
+    }
+    #ConvertPortion{
+        font-size:2vw;
+        background-color: #fff;
+        box-shadow:10px 10px 50px white;
+        border-radius: 100px;
+        width:68%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0;
+    }
+    #heads{
+        font-size:3vw;
+    }
+
+    #Input,#Conversion,#Gimme{
+
+        text-align: right;
+        border-radius: 25px;
+        width:33%;
+    }
+    #output{
+    font-size: 1vw;
+    border: 1px solid rgb(155, 155, 155);
+    background-color: white;
+    width: 75%; 
+    text-align: center;
+    height: 70px; 
+    overflow: auto;
+    border-radius: 25px;
+    margin:auto auto auto auto;
+    }
+    .buttons {
+    flex: 1; 
+    margin: 5px; 
+    max-width: calc(33% - 10px);
+}
+    #back{
+        border-radius: 23px;
+        background-color: white;
+        border:1 solid red;
+        font-family: 'Monserrat';
+        padding:5px;
+        transition:0.6s
+    }
+    a #back{
+        cursor: pointer;
+    }
+    #back:hover{
+        transform: scale(1.1);
+        background-color: #eeeeee;
+        color:red
+    }
+</style>
+<body>
+    <div id="Info">
+    <div id="name"> Vince Nikolai |</div>
+    <div id="information">CS 1131 Websites project</div>
+    <img src="ADDULOGO.png" style="width:10%; height:10%;float: right; margin-right:5%;margin-top:-1%">
+    </div>
+    <div id="anim">
+        <div class="imagelist">
+            <a href="calcuind.html" id="conversion" class="link">
+               <img src="1.png"class="item" id="item1">
+            </a>
+             <a href="IncomeTax.html" id="income" class="link">
+           <img src="2.png"class="item" id="item2">
+         </a>
+         <a href="payroll.html" id="payroll" class="link">
+          <img src="3.png"class="item" id="item3" >
+         </a>
+        <a href="NCalc.html" id="summation" class="link">
+         <img src="4.png" class="item" id="item4">
+         </a>
+        </div>
+        </div>
+        <div id="outerPortion">
+            <span id=heads>N Numbers Calculator</span>
+           <br>Input your value for N
+        <div id="ConvertPortion">
+            <input id="Input" type="number" class="buttons">
+            
+            <button id="gimme" onclick="Calculate()">Enter</button>
+        </div>
+        <br>
+        <div id="output">
+           
+            
+        </div>
+        <br><br><br><br>
+            <a href="index.html"><button id="back">Return To Menu</button></a>
+        
+        </div>
+    
+</body>
+
+<script>
+        function Factorial(x){
+            let y = x;
+            while (y>1){
+                y--;
+                x*=y;
+            }
+            return x;
+        }
+        function Summation(x){
+            let y=x;
+            do{
+                --y;
+                x+=y;
+            }while(y>1)
+            return x;
+        }
+        function AverageN(x){
+          let z = x;
+            for (let y=x-1 ; y>0; y--){
+                x+=y;
+            }
+            return x/z;
+        }
+        function Calculate(){
+            let x = document.getElementById('Input').value * 1;
+            let y = document.getElementById('output');
+            y.innerHTML = "The factorial of N is <b>" + Factorial(x)+ "</b><br> The Summation of N is <b>"+ Summation(x)+"</b><br> The Average of first N numbers is <b>"+ AverageN(x)+"</b>";
+        }
+       
+   
+</script>
+</html>
